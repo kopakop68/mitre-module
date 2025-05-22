@@ -1,0 +1,65 @@
+title: "MITRE ATT&CK Training Module"
+email: "kopal.dfis2242609@nfsu.ac.in"
+description: "A comprehensive training module for DFIR professionals leveraging the MITRE ATT&CK Framework."
+baseurl: "/mitre-module"
+url: "https://kopakop68.github.io/mitre-module/"
+repository: "kopakop68/mitre-module"
+
+author:
+  name: "Kopal Chaturvedi"
+  bio: "M.Sc. DFIS Student @ NFSU Delhi"
+  location: "India"
+
+logo: "/assets/images/nfsu-logo.png"
+
+remote_theme: mmistakes/minimal-mistakes@4.26.2
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+   - jekyll-remote-theme
+   - jekyll-feed
+   - jekyll-sitemap
+   - jekyll-seo-tag
+   - jekyll-include-cache
+
+# Collections
+collections:
+  modules:
+    output: true
+    permalink: /:path/
+
+  pages:
+    output: true
+    permalink: /:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: single
+  - scope:
+      path: "assets/css"
+    values:
+      sitemap: false
+
+# Assets
+include:
+  - _pages
+  - _includes
+
+assets:
+  css:
+    - "/assets/css/style.css"
+
+# Custom Includes
+head_custom: head_custom.html
+footer:
+  custom: footer.html
+
+# Feed (disabled)
+feed:
+  enabled: false

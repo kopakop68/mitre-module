@@ -1,0 +1,94 @@
+---
+permalink: /404.html
+layout: page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — Page Not Found | MITRE ATT&CK Forensics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>
+    .error-container {
+      text-align: center;
+      padding: 8rem 1rem;
+    }
+    .error-code {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      margin-bottom: 0.5rem;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+    }
+    .error-desc {
+      color: var(--secondary-text-color);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .btn-back {
+      display: inline-block;
+      background-color: var(--cta-bg);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-back:hover {
+      background-color: var(--cta-hover-bg);
+    }
+  </style>
+</head>
+<body>
+  <header class="custom-header enhanced-header">
+    <div class="logo-nav-wrap container">
+      <div class="logo-title-wrap">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Site Logo" class="site-logo">
+        </a>
+        <h1 class="site-title">MITRE ATT&CK Forensics</h1>
+      </div>
+      <nav class="custom-nav">
+        <ul class="nav-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/modules/' | relative_url }}">Modules</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container error-container">
+    <div class="error-code">404</div>
+    <div class="error-message">Page Not Found</div>
+    <div class="error-desc">
+      Oops! The page you’re looking for doesn’t exist or has been moved.  
+      Please check the URL or head back to a working page.
+    </div>
+    <a href="{{ '/' | relative_url }}" class="btn-back">Return Home</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="footer-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/modules/' | relative_url }}">Modules</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        &copy; {{ site.time | date: "%Y" }} MITRE ATT&CK Forensics Training • Created by <strong>Kopal Chaturvedi</strong><br>
+        All rights reserved. For educational use only.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
