@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modules | MITRE ATT&CK Forensics Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/logo.png' | relative_url }}" type="image/png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="custom-header enhanced-header">
+    <div class="logo-nav-wrap container">
+      <div class="logo-title-wrap">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="MITRE Logo" class="site-logo">
+        </a>
+        <h1 class="site-title">MITRE ATT&CK Forensics</h1>
+      </div>
+      <nav class="custom-nav">
+        <ul class="nav-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/modules/' | relative_url }}">Modules</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content container">
+    <section class="page__content">
+      {{ content }}
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="{{ '/modules/' | relative_url }}">Modules</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="https://github.com/kopakop68" target="_blank">GitHub</a>
+      </div>
+      <div class="footer-bottom">
+        &copy; {{ site.time | date: "%Y" }} MITRE ATT&CK Forensics Training • Created by <strong>Kopal Chaturvedi</strong><br>
+        All rights reserved. For educational use only.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!-- _layouts/post.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | MITRE ATT&CK Forensics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/logo.png' | relative_url }}" type="image/png">
+  <style>
+    /* Breadcrumb */
+    .breadcrumb { background:#fff; border:1px solid var(--divider-color); border-radius:4px;
+                 padding:.5rem 1rem; margin:1rem auto; max-width:1200px; font-size:.9rem; }
+    .breadcrumb a { color:var(--primary-accent); text-decoration:none; margin:0 .25rem; }
+    .breadcrumb span { color:var(--secondary-text-color); margin-left:.25rem; }
+
+    /* Table of Contents */
+    .post-toc { background:#f1f3f4; border-radius:4px; padding:.75rem 1rem; margin:1rem 0; font-size:.9rem;}
+    .post-toc a { margin-right:.75rem; color:var(--primary-accent); text-decoration:none; }
+
+    /* Tables inside posts */
+    .post-body table { width:100%; border-collapse:collapse; margin:2rem 0; }
+    .post-body th, .post-body td { border:1px solid var(--divider-color); padding:.75rem; text-align:left; }
+    .post-body th { background:#f4f7fa; }
+
+    /* Next link */
+    .next-link { display:inline-block; margin:2rem 0; font-weight:500;
+                 color:var(--primary-accent); text-decoration:none; }
+    .next-link:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="custom-header enhanced-header">
+    <div class="logo-nav-wrap container">
+      <div class="logo-title-wrap">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="MITRE Logo" class="site-logo">
+        </a>
+        <h1 class="site-title">MITRE ATT&CK Forensics</h1>
+      </div>
+      <nav class="custom-nav">
+        <ul class="nav-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/modules/' | relative_url }}">Modules</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  {% if page.header.overlay_image %}
+    {% include page__hero.html %}
+  {% endif %}
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container">
+    <a href="{{ '/' | relative_url }}">Home</a> ›
+    <a href="{{ '/modules/' | relative_url }}">Modules</a> ›
+    <span>{{ page.title }}</span>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content container">
+    <article class="post-content" itemscope itemtype="https://schema.org/Article">
+
+      <header class="post-header">
+        <h2 class="post-title">{{ page.title }}</h2>
+        {% if page.date %}
+          <p class="post-meta">Published on {{ page.date | date: "%B %-d, %Y" }}</p>
+        {% endif %}
+        {% if page.excerpt %}
+          <p class="post-excerpt">{{ page.excerpt }}</p>
+        {% endif %}
+      </header>
+
+      <!-- Article Body -->
+      <section class="post-body" itemprop="articleBody">
+        {{ content }}
+      </section>
+
+      <!-- Resources -->
+      {% if page.resources %}
+        <div class="post-resources container">
+          <h3>Resources</h3>
+          <ul>
+            {% for res in page.resources %}
+              <li>
+                <a href="{{ res.url }}"
+                   {% if res.external %} target="_blank" rel="noopener"{% endif %}>
+                  {{ res.label }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <!-- Next Module Link -->
+      <!-- {% if page.next %}
+        <a href="{{ page.next.url }}" class="next-link">Next Module →</a>
+      {% endif %} -->
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="footer-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/modules/' | relative_url }}">Modules</a>
+        <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+      </div>
+      <div class="footer-bottom">
+        &copy; {{ site.time | date: "%Y" }} MITRE ATT&CK Forensics Training • Created by <strong>Kopal Chaturvedi</strong><br>
+        All rights reserved. For educational use only.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

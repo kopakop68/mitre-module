@@ -1,0 +1,16 @@
+<header class="custom-header">
+  <div class="container logo-nav-wrap">
+    <a href="{{ '/' | relative_url }}" class="logo-title-link">
+      <img src="{{ '/assets/images/nfsu-logo.png' | relative_url }}" alt="Logo" class="site-logo">
+      <h1 class="site-title">MITRE ATT&CK Training Module</h1>
+    </a>
+
+    <nav class="custom-nav">
+      <ul class="nav-links">
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
